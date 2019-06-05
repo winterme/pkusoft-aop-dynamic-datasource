@@ -1,0 +1,38 @@
+server:
+  port: 1219
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  datasource:
+    licm:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbcUrl: jdbc:mysql://127.0.0.1:3306/licm?useUnicode=true&characterEncoding=utf-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Hongkong&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: root
+    licm2:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbcUrl: jdbc:mysql://127.0.0.1:3306/licm2?useUnicode=true&characterEncoding=utf-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Hongkong&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: root
+  jackson:
+    date-format: yyyyMMddHHmmss
+    time-zone: GMT+8
+  # ehcache 配置
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+#pagehelper分页插件配置
+web.webupload: /webupload
+# 日志配置
+logging:
+  level:
+    com:
+      zzq: debug
+  file:
+    max-size: 10KB
+    max-history: 30
+  path: log
